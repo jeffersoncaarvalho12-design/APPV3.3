@@ -1,0 +1,141 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saída em lote"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_dark" />
+
+        <Spinner
+            android:id="@+id/spinnerTechnician"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/etOsNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="OS / atendimento" />
+
+        <EditText
+            android:id="@+id/etBatchNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Observação do lote" />
+
+        <Button
+            android:id="@+id/btnCreateBatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Criar lote"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/btn_batch" />
+
+        <TextView
+            android:id="@+id/tvBatchInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/white"
+            android:padding="14dp"
+            android:text="Nenhum lote criado" />
+
+        <EditText
+            android:id="@+id/etBatchSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Serial / MAC / modelo" />
+
+        <Button
+            android:id="@+id/btnScanBatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Escanear pela câmera"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/btn_scanner" />
+
+        <Button
+            android:id="@+id/btnAddBatchItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Adicionar item ao lote"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/btn_exit" />
+
+        <Spinner
+            android:id="@+id/spinnerBatchProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" />
+
+        <EditText
+            android:id="@+id/etBatchQty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Quantidade por modelo"
+            android:inputType="number"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnAddBatchByModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Adicionar por modelo"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/btn_move" />
+
+        <TextView
+            android:id="@+id/tvBatchSelected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:padding="14dp"
+            android:text="Nenhum item selecionado" />
+
+        <ListView
+            android:id="@+id/listBatchItems"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnCloseBatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Finalizar lote e gerar recibo"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/green_dark" />
+
+        <ProgressBar
+            android:id="@+id/progressBatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

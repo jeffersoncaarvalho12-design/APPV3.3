@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/green_light"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produtos em estoque"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_dark"
+        android:layout_marginBottom="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_search_box"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etSearchStock"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Buscar por marca, modelo, ref..."
+            android:paddingHorizontal="8dp"
+            android:textColor="@color/text_dark" />
+
+        <Button
+            android:id="@+id/btnSearchStock"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Buscar"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/green_dark" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listStock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp" />
+
+</LinearLayout>

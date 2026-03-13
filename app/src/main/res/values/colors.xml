@@ -1,0 +1,15 @@
+<resources>
+    <color name="green_primary">#7ED321</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_light">#E8F5E9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_dark">#263238</color>
+
+    <color name="btn_scanner">#2196F3</color>
+    <color name="btn_entry">#43A047</color>
+    <color name="btn_exit">#E53935</color>
+    <color name="btn_move">#4CAF50</color>
+    <color name="btn_batch">#FB8C00</color>
+    <color name="btn_history">#8E24AA</color>
+    <color name="btn_settings">#607D8B</color>
+</resources>

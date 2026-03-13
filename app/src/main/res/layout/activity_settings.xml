@@ -1,0 +1,59 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configurações"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_dark" />
+
+        <TextView
+            android:id="@+id/tvCurrentUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Usuário:" />
+
+        <EditText
+            android:id="@+id/etServerUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:hint="URL do servidor" />
+
+        <Button
+            android:id="@+id/btnSaveServer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Salvar servidor"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/btn_settings" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Sair da conta"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/btn_settings" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Desenvolvido por Jefferson Carvalho" />
+
+    </LinearLayout>
+</ScrollView>

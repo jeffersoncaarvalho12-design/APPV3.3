@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_light">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:background="@color/green_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp">
+
+                        <TextView
+                            android:id="@+id/tvUserInitials"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_avatar_circle"
+                            android:gravity="center"
+                            android:text="NC"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imgUserPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_avatar_circle"
+                            android:contentDescription="Foto do usuário"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvWelcome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Olá, usuário"
+                            android:textColor="@color/green_dark"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Controle de estoque Net Conect"
+                            android:textColor="@color/text_dark"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_search_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <EditText
+                        android:id="@+id/etQuickSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="Buscar Serial / MAC / Modelo"
+                        android:paddingHorizontal="10dp"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="#607D8B" />
+
+                    <Button
+                        android:id="@+id/btnQuickSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:backgroundTint="@color/green_dark"
+                        android:text="Buscar"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📦 Produtos"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvProductsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🟢 Em estoque"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvEntriesCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📡 Em campo"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvExitsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🔧 Defeito"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvCriticalCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="0"
+                                android:textColor="@color/text_dark"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp">
+
+                    <TextView
+                        android:id="@+id/tvTopTechnicians"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="🏆 Top técnicos em retiradas&#10;-"
+                        android:textColor="@color/text_dark" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Ações rápidas"
+                    android:textColor="@color/green_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGoScanner"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/btn_scanner"
+                        android:text="Scanner"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/btnGoEntry"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/btn_entry"
+                        android:text="Entrada"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGoExit"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/btn_exit"
+                        android:text="Saída"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/btnGoBatch"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/btn_batch"
+                        android:text="Lote"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGoStock"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#00897B"
+                        android:text="Ver estoque"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/btnGoHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/btn_history"
+                        android:text="Histórico"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnGoSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/btn_settings"
+                    android:text="Configurações"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="70dp"
+                    android:text="Desenvolvido por Jefferson Carvalho"
+                    android:textColor="#607D8B"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabScanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="18dp"
+        android:contentDescription="Scanner rápido"
+        android:src="@android:drawable/ic_menu_camera"
+        app:backgroundTint="@color/btn_scanner"
+        app:tint="@android:color/white" />
+
+</FrameLayout>
